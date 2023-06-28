@@ -12,12 +12,6 @@ console.log(
     schnorr.sign(h, d, Buffer.alloc(32, 0x00))
   ).toString('hex')}`
 );
-
-console.log("-----");
-console.log(`TINY with NO AUX: ${Buffer.from(eccTiny.signSchnorr(h, d)).toString('hex')}`);
-console.log(`BIPSCHNORR with NO AUX: ${bipSchnorr.default.sign(dHex, h).toString('hex')}`);
-
-console.log("-----");
 console.log(
   `TINY with Buffer.alloc(32, 0x00): ${Buffer.from(
     eccTiny.signSchnorr(h, d, Buffer.alloc(32, 0x00))
@@ -28,3 +22,7 @@ console.log(
     .sign(dHex, h, Buffer.alloc(32, 0x00))
     .toString('hex')}`
 );
+
+console.log("-----");
+console.log(`TINY with NO AUX: ${Buffer.from(eccTiny.signSchnorr(h, d)).toString('hex')}`);
+console.log(`BIPSCHNORR with NO AUX: ${bipSchnorr.default.sign(dHex, h).toString('hex')}`);
